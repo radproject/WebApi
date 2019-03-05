@@ -41,7 +41,7 @@ namespace NoodleProject.WebApi.Models.Repos
             throw new NotImplementedException();
         }
 
-        public void Update(Post changedModel)
+        public void Update(Post changedModel, int Id)
         {
             throw new NotImplementedException();
         }

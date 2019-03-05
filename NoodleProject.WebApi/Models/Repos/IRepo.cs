@@ -10,7 +10,7 @@ namespace NoodleProject.WebApi.Models.Repos
         void Create(T model);
         T GetById(int id);
         T[] GetAll();
-        void Update(T changedModel);
+        void Update(T changedModel, int id);
         void Delete(int id);
     }
 }

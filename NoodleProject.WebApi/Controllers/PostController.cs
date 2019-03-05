@@ -11,15 +11,15 @@ using System.Web.Http;
 
 namespace NoodleProject.WebApi.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [RoutePrefix("posts")]
     public class PostController : ApiController
     {
         PostsRepository repository = new PostsRepository();
 
-        [Route("createpost")]
         [HttpPost]
-        public async Task<IHttpActionResult> CreatePost(PostBindingModel model)
+        [Route("createpost")]
+        public async Task<IHttpActionResult> CreatePost(CreatePostBindingModel model)
         {
             try
             {
@@ -36,8 +36,36 @@ namespace NoodleProject.WebApi.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e.Message);
             }
+        }
+
+        [HttpPatch]
+        [Route("updatepost")]
+        public async Task<IHttpActionResult> UpdatePost(UpdatePostBindingModel model)
+        {
+            try
+            {
+                Post post = new Post()
+                {
+                    ID = model.ID,
+                    Text = model.Text
+                };
+
+                repository.Update(post, model.ID);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("deletepost/{id}")]
+        public async Task<IHttpActionResult> DeletePost(int? id)
+        {
+            return Ok("YEET " + id.ToString());
         }
     }
 }
