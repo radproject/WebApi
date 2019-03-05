@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NoodleProject.DataLibrary
 {
-    class Posts
+    public class Post
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -21,11 +21,10 @@ namespace NoodleProject.DataLibrary
         [Display(Name = "Text")]
         public string Text { get; set; }
         [Display(Name = "Time stamp")]
-        public int TimeStamp { get; set; }
+        public long TimeStamp { get; set; }
 
         public virtual Thread associatedThread { get; set; }
+
         /*public virtual User associatedUser { get; set; }*/
-
-
     }
 }

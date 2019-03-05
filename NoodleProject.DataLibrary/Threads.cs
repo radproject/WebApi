@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NoodleProject.DataLibrary
 {
-    class Threads
+    public class Threads
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace NoodleProject.DataLibrary.Data
 {
-    class CoreContext: DbContext
+    public class BusinessContext: DbContext
     {
-        public DbSet<Posts> Posts { get; set; }
+        public DbSet<Post> Posts { get; set; }
         public DbSet<Threads> Threads { get; set; }
 
-        public CoreContext():base ("CoreContext")
+        public BusinessContext():base ("CoreContext")
         {
 
         }

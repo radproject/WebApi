@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace NoodleProject.DataLibrary.Data
 {
-    class ContextInitializer: DropCreateDatabaseIfModelChanges<CoreContext>
+    class ContextInitializer: DropCreateDatabaseIfModelChanges<BusinessContext>
     {
-        protected override void Seed(CoreContext context)
+        protected override void Seed(BusinessContext context)
         {
             var threads = new List<Threads>
             {
