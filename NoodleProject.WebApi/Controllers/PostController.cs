@@ -34,7 +34,7 @@ namespace NoodleProject.WebApi.Controllers
                 repository.Create(post);
                 return Ok();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest();
             }
